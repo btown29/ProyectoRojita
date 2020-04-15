@@ -34,11 +34,8 @@ public class controlador_paneladministrarempleados implements ActionListener{
 		this.panel.boton_modificar.addActionListener(this);
 		this.panel.boton_verregistromensual.addActionListener(this);
 		this.panel.boton_opciones.addActionListener(this);
-		panelopciones opcion = new panelopciones();
-		this.opcion = opcion;
-		System.out.println("Ejemplo yes");
-		//this.opcion.graficos.addActionListener(this);
-		System.out.println("Ejemplo no");
+	//	panelopciones opcion = new panelopciones();
+		//this.opcion = opcion;
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -57,20 +54,12 @@ public class controlador_paneladministrarempleados implements ActionListener{
 		if(e.getSource() == panel.boton_opciones) {
 			//panelopciones opcion = new panelopciones();
 			panelopciones opcion = new panelopciones();
-			controlador_panelopciones controlador = new controlador_panelopciones();
+			controlador_panelopciones controlador = new controlador_panelopciones(opcion);
 			
 			this.panel.removeAll();
 			this.panel.add(opcion,BorderLayout.CENTER);
 			this.panel.revalidate();
 			this.panel.repaint();		
-			
-		}
-		if(e.getSource() == this.opcion.graficos) {
-			
-			
-			// Falta por implementar
-			controlador_graficos.graficoPie("ejemplo1", 30);
-			controlador_graficos.graficoBarra("ejemplo2", 30);
 			
 		}
 		

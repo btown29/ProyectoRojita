@@ -13,8 +13,8 @@ import javax.swing.JOptionPane;
 public class conexion {
      
 	// Esto se cambia por los slash
-	// String config = "/proyectoRojita/src/crud/config.bin";
-	String config = "/src/crud/config.bin";
+	String config = "/proyectoRojita/src/crud/config.bin";
+	//String config = "/src/crud/config.bin";
 	String user = null;
 	String pass = null;
 	String url = null;

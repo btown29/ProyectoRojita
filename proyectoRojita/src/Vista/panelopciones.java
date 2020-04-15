@@ -1,5 +1,4 @@
 package Vista;
-import Controlador.controlador_graficos;
 import java.awt.BorderLayout;
 
 import java.awt.Color;
@@ -24,11 +23,11 @@ import java.awt.FlowLayout;
 
 public class panelopciones extends JPanel {
 
-	public controlador_graficos controlador_graficos;
 	
 	public JRadioButton consulta1;
 	public JRadioButton consulta2;
 	public JButton boton_modificar;
+	public ButtonGroup bgroup;
 	public JButton graficos;
 	public JButton salir;
 	public JTable table;
@@ -42,13 +41,13 @@ public class panelopciones extends JPanel {
 		String query1 = "Número de cargos por empleados";
 		String query2 = "El empleado del mes"; 
 				
-		JRadioButton consulta1 = new JRadioButton(query1);
+		consulta1 = new JRadioButton(query1);
 		consulta1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		consulta1.setBackground(Color.LIGHT_GRAY);
 		consulta1.setFont(new Font("Century Gothic", Font.PLAIN, 14));
 		//consulta1.setBounds(63, 102, 102, 23);
 		
-		JRadioButton consulta2 = new JRadioButton(query2);
+		consulta2 = new JRadioButton(query2);
 		consulta2.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		consulta2.setBackground(Color.LIGHT_GRAY);
 		consulta2.setFont(new Font("Century Gothic", Font.PLAIN, 14));
@@ -64,8 +63,8 @@ public class panelopciones extends JPanel {
 		JPanel panel2 = new JPanel();
 		panel2.setLayout(new BorderLayout());
 		
-		JButton graficos = new JButton("Gráficos");
-		JButton salir = new JButton("Salir");
+		graficos = new JButton("Gráficos");
+		salir = new JButton("Salir");
 		
 		panel2.add(graficos,BorderLayout.WEST);
 		panel2.add(salir,BorderLayout.EAST);
@@ -73,7 +72,7 @@ public class panelopciones extends JPanel {
 		
 		
 		
-        ButtonGroup bgroup = new ButtonGroup();
+        bgroup = new ButtonGroup();
         bgroup.add(consulta1);
         bgroup.add(consulta2);
         JPanel panelBotones = new JPanel();
