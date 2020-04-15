@@ -16,6 +16,7 @@ public class controlador_paneladministrarordenes implements ActionListener {
 		this.panel.boton_buscar.addActionListener(this);
 		this.panel.boton_cancelarorden.addActionListener(this);
 		this.panel.boton_nuevaorden.addActionListener(this);
+		System.out.println("CONSTRUCTOR once");
 		
 	}
 

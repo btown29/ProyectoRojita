@@ -11,8 +11,10 @@ import javax.swing.JOptionPane;
  *
  */
 public class conexion {
-
-	String config = "/proyectoRojita/src/crud/config.bin";
+     
+	// Esto se cambia por los slash
+	// String config = "/proyectoRojita/src/crud/config.bin";
+	String config = "/src/crud/config.bin";
 	String user = null;
 	String pass = null;
 	String url = null;
@@ -26,6 +28,7 @@ public class conexion {
 	 */
 	public conexion() throws IOException {
 		String c = System.getProperty("user.dir")+config;
+		System.out.println(c);
 		FileReader f = new FileReader(c);
 		BufferedReader b = new BufferedReader(f);
 		url = b.readLine().replaceAll("url:", "");
@@ -64,7 +67,34 @@ public class conexion {
 	}
 	
 	
-	
+	/**
+	 * Se ingresa un query como string y retorna una tabla
+	 * @return resultset
+	 */
+	public ResultSet query(String query) throws ClassNotFoundException{
+		Connection conData = null;
+		Statement stmData;
+		ResultSet rsData = null;
+		try {
+            //Class.forName(driver);
+            conData = conn();
+            stmData = conData.createStatement();
+            
+            if(conData != null) {
+            	System.out.println("Conectado!!");
+            }
+            
+            rsData = stmData.executeQuery(query);
+
+            conData.close(); //Se cierrab la conexion a la base de datos.
+            return rsData;
+			
+		}
+		catch(SQLException e) {
+			JOptionPane.showMessageDialog(null, "Error en la conexion: "+e.getMessage());
+            return null;
+		}
+	}
 	/**
 	 * retorna el producto buscado en el modulo de ventas
 	 * @return resultset
@@ -210,27 +240,7 @@ public class conexion {
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	
 }

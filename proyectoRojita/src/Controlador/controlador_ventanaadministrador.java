@@ -15,6 +15,7 @@ import Vista.paneladministrarproductosproveedor;
 import Vista.paneladministrarproveedores;
 import Vista.panelverliquidaciones;
 import Vista.ventanaadministrador;
+import Vista.panelopciones;
 import Vista.ventanainicio;
 
 public class controlador_ventanaadministrador implements ActionListener {

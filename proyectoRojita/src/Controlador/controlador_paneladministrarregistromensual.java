@@ -9,8 +9,7 @@ public class controlador_paneladministrarregistromensual implements ActionListen
 	paneladministrarregistromensual panel ;
 	
 	public controlador_paneladministrarregistromensual(paneladministrarregistromensual panel) {
-		this.panel = panel;
-		
+		this.panel = panel;		
 		this.panel.boton_buscar.addActionListener(this);
 		this.panel.boton_pagar.addActionListener(this);
 		

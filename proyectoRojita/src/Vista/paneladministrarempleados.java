@@ -4,10 +4,10 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
-
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JDialog;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -16,11 +16,13 @@ import javax.swing.table.DefaultTableModel;
 
 public class paneladministrarempleados extends JPanel {
 
+
 	public JButton boton_buscar;
 	public JButton boton_modificar;
 	public JButton boton_eliminar;
 	public JButton boton_agregar;
 	public JButton boton_verregistromensual;
+	public JButton boton_opciones;
 	
 	
 	public JTextField camporut;
@@ -29,12 +31,16 @@ public class paneladministrarempleados extends JPanel {
 	public JTextField campotelefono;
 	public JTextField campoapellido;
 	
+	public JDialog dialog;
+	
 	
 	public JPanel panellista;
 	public JTable table;
+	public DefaultTableModel modelo;
 	
 	
 	public paneladministrarempleados() {
+
 
 		setLayout(new BorderLayout(0, 0));
 		
@@ -147,19 +153,27 @@ public class paneladministrarempleados extends JPanel {
 		panel_5.add(lblCargo);
 		
 		boton_verregistromensual = new JButton("Ver Registro Mensual");
+		boton_verregistromensual.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		boton_verregistromensual.setFont(new Font("Century Gothic", Font.PLAIN, 14));
 		boton_verregistromensual.setBackground(Color.LIGHT_GRAY);
 		boton_verregistromensual.setBounds(511, 102, 189, 23);
+		//boton_verregistromensual.addActionListener(this);
 		panel_5.add(boton_verregistromensual);
 		
+		boton_opciones = new JButton("Opciones");
+		boton_opciones.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		boton_opciones.setFont(new Font("Century Gothic", Font.PLAIN, 14));
+		boton_opciones.setBackground(Color.LIGHT_GRAY);
+		boton_opciones.setBounds(511, 102, 189, 23);
+
 		panellista = new JPanel();
 		panellista.setBounds(10, 152, 775, 273);
-		panel_4.add(panellista);
 		panellista.setLayout(new BorderLayout(0, 0));
 		
 		JScrollPane scrollPane = new JScrollPane();
 		panellista.add(scrollPane, BorderLayout.CENTER);
-		
+		panellista.add(boton_opciones, BorderLayout.SOUTH);
+		panel_4.add(panellista);
 		table = new JTable();
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
